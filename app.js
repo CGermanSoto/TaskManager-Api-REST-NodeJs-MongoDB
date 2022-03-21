@@ -12,13 +12,13 @@ app.use(express.json());
 app.use('/api/v1/tasks', tasks);
 
 
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 const start = async() =>{
     try {
         await connectDB(process.env.MONGO_URI)
-        app.listen(PORT);
-        console.log(`Connected to DB & Server in port ${PORT}`)
+        app.listen(port);
+        console.log(`Connected to DB & Server in port ${port}`)
     } catch (error) {
         console.log(error);
     }
